@@ -13,4 +13,13 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  def login_form
+  end
+
+  def login
+    user = User.find_by(username: params[:username])
+    flash[:success] = "Welcome, #{user.username}!"
+    redirect_to users_dashboard_index_path
+  end
 end
