@@ -25,7 +25,7 @@ describe "Welcome Index", type: :feature do
       expect(current_path).to eq(root_path)
 
       click_link "Log In"
-      expect(current_path).to eq(log_in_path)
+      expect(current_path).to eq(login_path)
     end
 
     it "takes me to the Sign Up page when I click the Sign Up button" do
