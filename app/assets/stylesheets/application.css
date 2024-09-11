@@ -13,3 +13,159 @@
  *= require_tree .
  *= require_self
  */
+.welcome-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #ffffff; 
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  color: #007acc; 
+  margin-bottom: 5px;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  color: #005f99; 
+  margin-bottom: 5px;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 20px;
+}
+
+body {
+  background-color: white;
+  color: #333; 
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Logo Styling */
+.logo {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 30px auto; /* This Centers the logo */
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #e6f7ff; 
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  color: #007acc;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header h2 {
+  color: #007acc; 
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #007acc; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #005f99;
+}
+
+/* Links */
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005f99;
+}
+
+/* Forms */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  width: 25%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #007acc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #005f99;
+}
+
+/* Footer */
+footer {
+  background-color: #f2faff; 
+  color: #007acc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #e6f7ff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.navbar {
+  background-color: #e6f7ff;
+  padding: 20px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 5;
+  display: flex;
+  justify-content: left;
+}
+
+.nav-logo-img {
+  max-width: 70px;
+  height: auto;
+  margin-right: 1rem;
+
+}
+
+.nav-logo-text {
+  font-size: 1.5rem;
+  color: #007acc;
+  text-decoration: none;
+}
