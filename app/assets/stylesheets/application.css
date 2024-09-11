@@ -103,10 +103,10 @@ a:hover {
 
 /* Forms */
 input[type="text"], input[type="email"], input[type="password"], textarea {
-  width: 100%;
+  width: 25%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #007acc;
   border-radius: 5px;
 }
 

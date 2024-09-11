@@ -1,0 +1,26 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+  <h2>Sign Up</h2> 
+</div>
+
+<div class="welcome-section">
+  <h2>Add Your Account Details</h2> 
+</div>
+
+<div class="input">
+  <%= form_with url: new_user_path, method: :post do |form| %>
+    <%= form.label :first_name, "First Name:" %>
+    <%= form.text_field :first_name, type: "text" %>
+    <br>
+    <%= form.label :last_name, "Last Name:" %>
+    <%= form.text_field :last_name, type: "text" %>
+    <br>
+    <%= form.label :email, "Email:" %>
+    <%= form.email_field :email, type: "email" %>
+    <br>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password, type: "password" %>
+    <br>
+    <%= form.submit "Sign Up", class: "submit" %>
+  <% end %>
+</div>
