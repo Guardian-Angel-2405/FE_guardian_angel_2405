@@ -18,6 +18,9 @@
     <%= form.label :password, "Password:" %>
     <%= form.password_field :password, required: true, minlength: 6, type: "password" %>
     <br>
+    <%= form.label :password_confirmation, "Password Confirmation:" %>
+    <%= form.password_field :password_confirmation, required: true, minlength: 6, type: "password" %>
+    <br>
     <%= form.label :phone_number, "Phone Number:" %>
     <%= form.telephone_field :phone_number, required: true, pattern: "[0-9]{10}", title: "Please enter a valid 10-digit phone number" %>
     <br>
