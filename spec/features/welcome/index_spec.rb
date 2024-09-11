@@ -24,7 +24,7 @@ describe "Welcome Index", type: :feature do
       visit root_path
       expect(current_path).to eq(root_path)
 
-      click_button "Log In"
+      click_link "Log In"
       expect(current_path).to eq(log_in_path)
     end
 
@@ -32,15 +32,15 @@ describe "Welcome Index", type: :feature do
       visit root_path
       expect(current_path).to eq(root_path)
 
-      click_button "Sign Up"
+      click_link "Sign Up"
       expect(current_path).to eq(new_user_path)
     end
-    
+
     it "takes me to the Emergency Services page when I click the Emergency Services button" do
       visit root_path
       expect(current_path).to eq(root_path)
 
-      click_button "Emergency Services"
+      click_link "Emergency Services"
       expect(current_path).to eq(services_path)
     end
   end
