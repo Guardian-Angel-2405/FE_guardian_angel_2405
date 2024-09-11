@@ -23,8 +23,9 @@ Add additional notes to deploy this on a live system
 ## Built With
   - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
     for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
+  - [Creative Commons](https://creativecommons.org/) - Used to choose the license
+  - [ThroughLine]([https://www.example.com](https://api.throughlinecare.com/users/sign_in))
+  - [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405)
 ## Contributing
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for submitting pull requests to us.
@@ -37,15 +38,15 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
     [GitHub](https://github.com/AustinKCodes)
 - **Cory Bretsch** - *BE and FE Engineer* -
     [GitHub](https://github.com/CoryBretsch)
-  - **Dana Howell** - *BE and FE Engineer* -
+- **Dana Howell** - *BE and FE Engineer* -
     [GitHub](https://github.com/DHowell1150)
- - **Evan Davis** - *BE and FE Engineer* -
+- **Evan Davis** - *BE and FE Engineer* -
     [GitHub](https://github.com/DAVISEVAN)
 - **Lance Nelson** - *BE and FE Engineer* -
     [GitHub](https://github.com/LancePants97)
-  - **Jan Lehigh** - *BE and FE Engineer* -
+- **Jan Lehigh** - *BE and FE Engineer* -
     [GitHub](https://github.com/JCL461437)
-  - **Billie Thompson** - *Provided README Template* -
+- **Billie Thompson** - *Provided README Template* -
     [PurpleBooth](https://github.com/PurpleBooth)
 See also the list of
 [contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
