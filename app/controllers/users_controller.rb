@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
@@ -18,8 +19,13 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.find_by(username: params[:username])
-    flash[:success] = "Welcome, #{user.username}!"
+    user = User.find_by(email: params[:email])
+    flash[:success] = "Welcome, #{user.first_name}!"
     redirect_to users_dashboard_index_path
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 end
