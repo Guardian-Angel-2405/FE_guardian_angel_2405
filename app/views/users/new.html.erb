@@ -1,26 +1,27 @@
 <div class="welcome-section">
   <h1>Guardian Angel</h1> 
   <h2>Sign Up</h2> 
-</div>
-
-<div class="welcome-section">
   <h2>Add Your Account Details</h2> 
 </div>
 
 <div class="input">
   <%= form_with url: new_user_path, method: :post do |form| %>
     <%= form.label :first_name, "First Name:" %>
-    <%= form.text_field :first_name, type: "text" %>
+    <%= form.text_field :first_name, required: true, type: "text" %>
     <br>
     <%= form.label :last_name, "Last Name:" %>
-    <%= form.text_field :last_name, type: "text" %>
+    <%= form.text_field :last_name, required: true, type: "text" %>
     <br>
     <%= form.label :email, "Email:" %>
-    <%= form.email_field :email, type: "email" %>
+    <%= form.email_field :email, required: true, type: "email" %>
     <br>
     <%= form.label :password, "Password:" %>
-    <%= form.password_field :password, type: "password" %>
+    <%= form.password_field :password, required: true, minlength: 6, type: "password" %>
+    <br>
+    <%= form.label :phone_number, "Phone Number:" %>
+    <%= form.telephone_field :phone_number, required: true, pattern: "[0-9]{10}", title: "Please enter a valid 10-digit phone number" %>
     <br>
     <%= form.submit "Sign Up", class: "submit" %>
   <% end %>
 </div>
+
