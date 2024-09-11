@@ -5,7 +5,7 @@
 </div>
 
 <div class="input">
-  <%= form_with url: new_user_path, method: :post do |form| %>
+  <%= form_with model: @user, method: :post do |form| %>
     <%= form.label :first_name, "First Name:" %>
     <%= form.text_field :first_name, required: true, type: "text" %>
     <br>
