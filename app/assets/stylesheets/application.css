@@ -152,15 +152,16 @@ section {
 .nav-list {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 5;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .nav-logo-img {
-  max-width: 50px;
+  max-width: 70px;
   height: auto;
   margin-right: 1rem;
+
 }
 
 .nav-logo-text {
