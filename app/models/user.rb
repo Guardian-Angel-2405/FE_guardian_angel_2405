@@ -3,5 +3,5 @@ class User < ApplicationRecord
 
   has_secure_password #by itself tells bcrypt its going to have password and password confirmation
 
-  validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
+  validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP #look into testing
 end
