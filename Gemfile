@@ -56,6 +56,8 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "shoulda-matchers", "~> 5.0"
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
