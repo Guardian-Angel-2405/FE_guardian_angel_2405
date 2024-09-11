@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "welcome#index"
+
+  resources :users, only: [:show, :index, :new] do
+    resources :dashboard, only: [:index]
+  end
+
+  resources :services, only: [:index, :show]
+
 end
