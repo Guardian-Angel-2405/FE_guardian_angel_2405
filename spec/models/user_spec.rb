@@ -8,7 +8,6 @@ describe User, type: :model do
     it {should validate_presence_of(:password)}
     it {should validate_presence_of(:phone_number)}
 
-    # has_secure_password validation test for password
     # validates_format_of validation test for email
     
     it {should validate_uniqueness_of(:email)}
