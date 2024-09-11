@@ -16,13 +16,13 @@
 .welcome-section {
   text-align: center;
   padding: 50px 0;
-  background-color: #f2faff; 
+  background-color: #ffffff; 
 }
 
 .welcome-section h1 {
   font-size: 3rem;
   color: #007acc; 
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .welcome-section h2 {
@@ -48,7 +48,7 @@ body {
 
 /* Logo Styling */
 .logo {
-  width: 150px;
+  width: 350px;
   height: auto;
   display: block;
   margin: 30px auto; /* This Centers the logo */
