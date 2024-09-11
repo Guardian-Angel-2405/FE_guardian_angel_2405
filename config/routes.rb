@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
   end
 
+  resources :login, only: [:index] 
+
   resources :services, only: [:index, :show]
 
 end
