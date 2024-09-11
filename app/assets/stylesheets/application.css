@@ -13,7 +13,29 @@
  *= require_tree .
  *= require_self
  */
+.welcome-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f2faff; 
+}
 
+.welcome-section h1 {
+  font-size: 3rem;
+  color: #007acc; 
+  margin-bottom: 10px;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  color: #005f99; 
+  margin-bottom: 5px;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 20px;
+}
 
 body {
   background-color: white;
