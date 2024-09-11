@@ -143,3 +143,28 @@ footer {
 section {
   padding: 40px 0;
 }
+
+.navbar {
+  background-color: #e6f7ff;
+  padding: 20px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-logo-img {
+  max-width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.nav-logo-text {
+  font-size: 1.5rem;
+  color: #007acc;
+  text-decoration: none;
+}
