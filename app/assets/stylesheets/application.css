@@ -39,7 +39,7 @@
 
 body {
   background-color: white;
-  color: #333; /* Dark grey for readable text */
+  color: #333; 
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -57,7 +57,7 @@ body {
 
 /* Header */
 header {
-  background-color: #e6f7ff; /* Light blue background for header */
+  background-color: #e6f7ff; 
   padding: 20px 0;
   text-align: center;
 }
