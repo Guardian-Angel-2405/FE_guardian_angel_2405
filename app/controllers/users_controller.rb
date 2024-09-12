@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.create(user_params)
+    session[:user_id] = new_user.id
     flash[:success] = "Welcome, #{new_user.first_name}!"
-    binding.pry
     redirect_to user_dashboard_index_path(new_user.id)
   end
 
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
+      session[:user_id] = new_user.id
       flash[:success] = "Welcome, #{user.first_name}!"
       redirect_to user_dashboard_index_path(user.id)
     else
