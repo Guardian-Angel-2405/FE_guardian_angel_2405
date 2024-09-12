@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_users = User.create(user_params)
+    new_user = User.create(user_params)
     flash[:success] = "Welcome, #{new_user.username}!"
     redirect_to user_dashboard_index_path
   end
