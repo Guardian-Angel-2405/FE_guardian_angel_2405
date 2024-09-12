@@ -4,7 +4,7 @@ describe "User Registration Form" do
   describe "when I visit the users_new_path" do
     it "displays a form to create a new user" do
       visit new_user_path
-      expect(current_path).to eq(root_path)
+      expect(current_path).to eq(new_user_path)
 
       expect(page).to have_content("Guardian Angel")
       expect(page).to have_content("Sign Up")
@@ -20,7 +20,7 @@ describe "User Registration Form" do
     
     it "creates a new user when I fill out the form" do
       visit new_user_path
-      expect(current_path).to eq(root_path)
+      expect(current_path).to eq(new_user_path)
 
       first_name = "Craig"
       last_name = "Jones"
