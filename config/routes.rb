@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   
   get "/login", to: "users#login_form"
+  post "/login", to: "users#login"
 
   get "/about", to: "about#index"
   
