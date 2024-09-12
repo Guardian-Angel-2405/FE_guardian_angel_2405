@@ -22,7 +22,6 @@ describe "User Registration Form" do
       visit new_user_path
       expect(current_path).to eq(root_path)
 
-      
       first_name = "Craig"
       last_name = "Jones"
       email = "craigjones@thebteam.com"
@@ -38,6 +37,9 @@ describe "User Registration Form" do
       fill_in :phone_number, with: phone_number
 
       click_on "Create User"
+
+      expect(current_path).to eq(user_dashboard_index_path)
+      expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
     end
   end
 end
