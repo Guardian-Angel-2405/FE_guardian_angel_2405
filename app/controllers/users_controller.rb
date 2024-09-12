@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     flash[:success] = "Welcome, #{user.first_name}!"
-    redirect_to users_dashboard_index_path(user.id)
+    redirect_to user_dashboard_index_path(user.id)
   end
 
   private
