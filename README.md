@@ -11,8 +11,8 @@ You will need to have the Ruby 3.2.2 and Rails 7.1.4. This project utilizes the 
 ### Installing
 To install and use this repository on your local machine firt clone down this repository, and clone down the [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405) repository.
 Navigate through the console so that your are in the directories of each application (you will need two terminals open).
-Following this run `rails s` in each terminal. You should ensure that each console is running on a seperate `localhost` number. For example, `localhost:3000` for the backend repository and `localhost:5000` for the frontend. 
-Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application.
+Following this run `rails s` in each terminal. You should ensure that each console is running on a seperate `localhost` number. For example, `localhost:3000` for the backend repository and `localhost:4567` for the frontend. 
+Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application. By defualt the backend application should be `localhost:4567`.
 
 Alternativley you can utilize the deployed version of the site here: (link will be placed soon)
 
@@ -33,7 +33,7 @@ of conduct, and the process for submitting pull requests to us.
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
 available, see the [tags on this
 repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
-## Authors
+## Authors & Contributors 
 - **Austin Kenny** - *BE and FE Engineer* -
     [GitHub](https://github.com/AustinKCodes)
 - **Cory Bretsch** - *BE and FE Engineer* -
@@ -48,9 +48,6 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
     [GitHub](https://github.com/JCL461437)
 - **Billie Thompson** - *Provided README Template* -
     [PurpleBooth](https://github.com/PurpleBooth)
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
 ## License
 This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
 Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
