@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+ 
 .welcome-section {
   text-align: center;
   padding: 50px 0;
@@ -146,7 +149,7 @@ section {
 
 .navbar {
   background-color: #e6f7ff;
-  padding: 20px 0;
+  padding: 1px 0;
 }
 
 .nav-list {
@@ -168,4 +171,9 @@ section {
   font-size: 1.5rem;
   color: #007acc;
   text-decoration: none;
+}
+
+/* Nav Links underlined when on current path with conditionals using interpolation to insert 'active' if condition is met */
+.nav-link.active {
+  text-decoration: underline;
 }

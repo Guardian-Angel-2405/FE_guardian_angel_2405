@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
   
   get "/login", to: "users#login_form"
+
+  get "/about", to: "about#index"
   
   resources :services, only: [:index, :show]
 
