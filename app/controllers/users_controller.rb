@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
   def create
     new_users = User.create(user_params)
-          flash[:success] = "Welcome, #{new_user.username}!"
-    redirect_to user_dashboard_path
+    flash[:success] = "Welcome, #{new_user.username}!"
+    redirect_to user_dashboard_index_path
   end
 
   def update
