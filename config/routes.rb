@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  resources :users, only: [:show, :index, :new] do
+  resources :users, only: [:show, :index, :new, :create] do
     resources :dashboard, only: [:index]
   end
   
