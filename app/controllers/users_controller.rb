@@ -13,14 +13,17 @@ class UsersController < ApplicationController
     redirect_to user_dashboard_index_path(new_user.id)
   end
   
-  def edit
-    user = User.find(params[:user_id])
-  end
-
   def update
     user = User.find(params[:user_id])
-    user.update(user_params)
-    redirect_to user_dashboard_index_path
+    if user.update(user_params)
+      redirect_to user_dashboard_index_path(user), notice: 'Profile was successfully updated.'
+    else
+      render :edit
+    end
+  end
+  
+  def edit
+    user = User.find(params[:user_id])
   end
 
   def login_form
