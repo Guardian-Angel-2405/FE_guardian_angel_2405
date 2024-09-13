@@ -12,14 +12,15 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome, #{new_user.first_name}!"
     redirect_to user_dashboard_index_path(new_user.id)
   end
+  
+  def edit
+    user = User.find(params[:user_id])
+  end
 
   def update
     user = User.find(params[:user_id])
     user.update(user_params)
     redirect_to user_dashboard_index_path
-  end
-  
-  def edit
   end
 
   def login_form
