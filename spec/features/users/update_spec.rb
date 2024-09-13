@@ -10,14 +10,14 @@ describe "User Update" do
       
       click_on "Edit Account Details"
       
-      expect(current_path).to eq(login_path)
+      expect(current_path).to eq(edit_user_path)
     end
 
     it "displays a form that allows you to change you account information" do
       user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
 
-      visit user_path(user)
-      expect(current_path).to eq(user_path(user))
+      visit edit_user_path(user)
+      expect(current_path).to eq(edit_user_path(user))
 
       first_name = "Nicholas"
       last_name = "Rodriguez"
