@@ -19,6 +19,7 @@ RSpec.describe "Logging In" do
 
     expect(page).to have_content("Welcome, #{user.first_name}")
   end
+  
   it "cannot log in with bad credentials" do
     user = User.create(email: "blackbeltslayer@thebteam.com", password: "daslayer")
 
