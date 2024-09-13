@@ -14,6 +14,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find(params[:user_id])
+    user.update(user_params)
+    redirect_to user_dashboard_index_path
   end
   
   def edit
