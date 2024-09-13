@@ -5,19 +5,19 @@ describe "User Update" do
     it "displays a button to edit account details" do
       user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
       
-      visit user_index_dashboard_path(user)
-      expect(current_path).to eq(user_index_dashboard_path)
+      visit user_index_dashboard_path(user.id)
+      expect(current_path).to eq(user_index_dashboard_path(user.id))
       
       click_on "Edit Account Details"
       
-      expect(current_path).to eq(edit_user_path)
+      expect(current_path).to eq(edit_user_path(user.id))
     end
 
     it "displays a form that allows you to change you account information" do
       user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
 
-      visit edit_user_path(user)
-      expect(current_path).to eq(edit_user_path(user))
+      visit edit_user_path(user.id)
+      expect(current_path).to eq(edit_user_path(user.id))
 
       first_name = "Nicholas"
       last_name = "Rodriguez"
@@ -31,7 +31,7 @@ describe "User Update" do
 
       click_on "Update User"
 
-      expect(current_path).to eq(user_dashboard_index_path)
+      expect(current_path).to eq(user_dashboard_index_path(user.id))
       expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
 
       expect(page).to have_content("Email: #{email}")
