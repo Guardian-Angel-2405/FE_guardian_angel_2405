@@ -4,12 +4,12 @@ describe "User Update" do
   describe "when I visit the user_index_dashboard_path" do
     it "displays a button to edit account details" do
       user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
-
+      
       visit user_index_dashboard_path(user)
       expect(current_path).to eq(user_index_dashboard_path)
-
+      
       click_on "Edit Account Details"
-  
+      
       expect(current_path).to eq(login_path)
     end
 
