@@ -4,7 +4,7 @@
 </div>
 
 <div class="input">
-  <%= form_with model: @user, method: :patch do |form| %>
+  <%= form_with model: @user, method: :patch do |form| %> 
     <%= form.label :first_name, "First Name:" %>
     <%= form.text_field :first_name, required: true, type: "text" %>
     <br>
@@ -26,3 +26,4 @@
     <%= form.submit "Update User", class: "submit" %>
   <% end %>
 </div>
+
