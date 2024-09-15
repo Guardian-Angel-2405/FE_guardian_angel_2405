@@ -8,7 +8,7 @@ describe "User Registration Form" do
 
       expect(page).to have_content("Guardian Angel")
       expect(page).to have_content("Sign Up")
-      expect(page).to have_content("Add Your Account Details ")
+      expect(page).to have_content("Add Your Account Details")
 
       expect(page).to have_content("First Name:")
       expect(page).to have_content("Last Name:")
