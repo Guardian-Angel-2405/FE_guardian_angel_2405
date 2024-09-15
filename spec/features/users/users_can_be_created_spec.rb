@@ -43,7 +43,7 @@ describe "User Registration Form" do
       user = User.last
 
       expect(current_path).to eq(user_dashboard_index_path(user.id))
-      expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
+      expect(page).to have_content("Welcome, #{first_name}!")
     end
   end
 end
