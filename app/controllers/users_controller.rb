@@ -7,10 +7,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.create(user_params)
-    session[:user_id] = new_user.id
-    flash[:success] = "Welcome, #{new_user.first_name}!"
-    redirect_to user_dashboard_index_path(new_user.id)
+    @user = User.new(user_params)  
+    
+    if @user.save 
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome, #{@user.first_name}!"
+      redirect_to user_dashboard_index_path(@user.id)
+    elsif !@user.save
+      flash[:error] = "There was a problem creating your account. Please check the form for errors."
+      render :new  
+    end
   end
   
   def edit
@@ -43,6 +49,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :phone_number)
   end
 end

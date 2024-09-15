@@ -66,12 +66,12 @@ describe "User Registration Form" do
         fill_in "Phone Number:", with: phone_number
 
         click_on "Sign Up"
-
       end
-      
+
       user = User.last
 
-      expect(current_path).to eq(new_user_path)
+      expect(user).to eq(nil)
+      expect(current_path).to eq(users_path)
     end
   end
 end
