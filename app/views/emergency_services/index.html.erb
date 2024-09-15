@@ -1,0 +1,34 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+
+  <h2>Emergency Services</h2> 
+</div>
+
+<div class="body">
+  <p>Available Emergecy Services</p>
+
+  <!-- Error Message Handling -->
+  <% if flash[:error] %>
+    <div class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <!-- Helplines List -->
+  <% if @helplines.any? %>
+    <ul class="helplines-list">
+      <% @helplines.each do |helpline| %>
+      <li class="helpline-item">
+        <strong><%= helpline['name']%></strong> - <%= helpline['description']%> 
+        <br />
+        <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
+        <br />
+        <%= link_to 'View Details', emergency_services_path(helpline['id']), class: 'btn btn-info' %>
+        </li>
+      <% end %>
+      </ul>
+    <% else %>
+      <p>No helplines available</p>
+    <% end %>
+</div>
+
