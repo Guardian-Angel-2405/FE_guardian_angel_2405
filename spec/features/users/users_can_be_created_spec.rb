@@ -45,5 +45,33 @@ describe "User Registration Form" do
       expect(current_path).to eq(user_dashboard_index_path(user.id))
       expect(page).to have_content("Welcome, #{first_name}!")
     end
+
+    it "will NOT create a new user when I fill out the form with bad credentials" do
+      visit new_user_path
+      expect(current_path).to eq(new_user_path)
+
+      first_name = "Craig"
+      last_name = "Jones"
+      email = "craigjones"
+      password = "themenace"
+      password_confirmation = "themenace"
+      phone_number = "I am a menace"
+
+      within("#form") do
+        fill_in "First Name:", with: first_name
+        fill_in "Last Name:", with: last_name
+        fill_in "Email:", with: email
+        fill_in "Password:", with: password
+        fill_in "Password Confirmation:", with: password_confirmation
+        fill_in "Phone Number:", with: phone_number
+
+        click_on "Sign Up"
+
+      end
+      
+      user = User.last
+
+      expect(current_path).to eq(new_user_path)
+    end
   end
 end
