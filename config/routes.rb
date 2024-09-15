@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
   get "/about", to: "about#index"
   
-  resources :services, only: [:index, :show]
+  resources :emergency_services, only: [:index, :show]
 
 end
