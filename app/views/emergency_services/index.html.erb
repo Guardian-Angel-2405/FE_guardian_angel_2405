@@ -23,7 +23,7 @@
         <br />
         <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
         <br />
-        <%= link_to 'View Details', emergency_services_path(helpline['id']), class: 'btn btn-info' %>
+        <%= link_to 'View Details', emergency_service_path(helpline['id']), class: 'btn btn-info' %>
         </li>
       <% end %>
       </ul>
