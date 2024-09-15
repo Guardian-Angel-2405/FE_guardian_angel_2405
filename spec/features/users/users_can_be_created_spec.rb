@@ -30,19 +30,19 @@ describe "User Registration Form" do
       phone_number = "1-101-111-10101"
 
       within("#form") do
-        fill_in :first_name, with: first_name
-        fill_in :last_name, with: last_name
-        fill_in :email, with: email
-        fill_in :password, with: password
-        fill_in :password_confirmation, with: password_confirmation
-        fill_in :phone_number, with: phone_number
+        fill_in "First Name:", with: first_name
+        fill_in "Last Name:", with: last_name
+        fill_in "Email:", with: email
+        fill_in "Password:", with: password
+        fill_in "Password Confirmation:", with: password_confirmation
+        fill_in "Phone Number:", with: phone_number
 
         click_on "Create User"
       end
       
       user = User.last
 
-      expect(current_path).to eq(user_dashboard_index_path(user))
+      expect(current_path).to eq(user_dashboard_index_path(user.id))
       expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
     end
   end

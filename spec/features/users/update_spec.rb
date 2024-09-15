@@ -24,12 +24,10 @@ describe "User Update" do
       email = "nickyrod@gmail.com"
 
       within("#form") do
-        fill_in :first_name, with: first_name
-        fill_in :last_name, with: last_name
-        fill_in :email, with: email
-        fill_in :password, with: user.password
-        fill_in :phone_number, with: user.phone_number
-
+        fill_in "First Name:", with: first_name
+        fill_in "Last Name:", with: last_name
+        fill_in "Email:", with: email
+        
         click_on "Update User"
       end
 
