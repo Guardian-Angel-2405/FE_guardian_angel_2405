@@ -1,4 +1,4 @@
-class ServicesController < ApplicationController
+class EmergencyServicesController < ApplicationController
   def index
   end
 
