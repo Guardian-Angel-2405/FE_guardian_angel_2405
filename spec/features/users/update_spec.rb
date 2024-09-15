@@ -27,9 +27,11 @@ describe "User Update" do
         fill_in "First Name:", with: first_name
         fill_in "Last Name:", with: last_name
         fill_in "Email:", with: email
-        
+
         click_on "Update User"
       end
+
+      user = User.last
 
       expect(current_path).to eq(user_dashboard_index_path(user.id))
       expect(page).to have_content("Welcome, #{first_name} #{last_name}!")

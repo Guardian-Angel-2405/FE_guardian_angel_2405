@@ -37,7 +37,7 @@ describe "User Registration Form" do
         fill_in "Password Confirmation:", with: password_confirmation
         fill_in "Phone Number:", with: phone_number
 
-        click_on "Create User"
+        click_on "Sign Up"
       end
       
       user = User.last
