@@ -40,7 +40,7 @@ describe "Welcome Index", type: :feature do
       visit root_path
       expect(current_path).to eq(root_path)
 
-      click_link "Emergency Services"
+      click_link "View Emergency Services"
       expect(current_path).to eq(services_path)
     end
   end
