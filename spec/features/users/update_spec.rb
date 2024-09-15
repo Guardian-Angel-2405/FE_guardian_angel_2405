@@ -22,11 +22,13 @@ describe "User Update" do
       first_name = "Nicholas"
       last_name = "Rodriguez"
       email = "nickyrod@gmail.com"
+      password = "daslayer"
 
-      
       fill_in "First Name:", with: first_name
       fill_in "Last Name:", with: last_name
       fill_in "Email:", with: email
+      fill_in "Password:", with: password
+      fill_in "Password Confirmation:", with: password
 
       click_on "Update User"
 
