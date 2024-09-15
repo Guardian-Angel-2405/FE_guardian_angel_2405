@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe "User Update" do
-  describe "when I visit the user_index_dashboard_path" do
+  describe "when I visit the user_dashboard_index_path" do
     it "displays a button to edit account details" do
-      user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
-      
-      visit user_index_dashboard_path(user.id)
-      expect(current_path).to eq(user_index_dashboard_path(user.id))
+      user = User.create!(email: "blackbeltslayer@gmail.com", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
+
+      visit user_dashboard_index_path(user.id)
+      expect(current_path).to eq(user_dashboard_index_path(user.id))
       
       click_on "Edit Account Details"
       
@@ -14,7 +14,7 @@ describe "User Update" do
     end
 
     it "displays a form that allows you to change you account information" do
-      user = User.create(email: "blackbeltslayer", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
+      user = User.create!(email: "blackbeltslayer@gmail.com", first_name: "Nicky", last_name: "Rod", password: "daslayer", phone_number: "2022022020")
 
       visit edit_user_path(user.id)
       expect(current_path).to eq(edit_user_path(user.id))
