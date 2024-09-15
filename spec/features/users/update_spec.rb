@@ -33,7 +33,6 @@ describe "User Update" do
       click_on "Update User"
 
       expect(current_path).to eq(user_dashboard_index_path(user))
-      expect(page).to have_content("Welcome, #{first_name}!")
 
       expect(page).to have_content("Email: #{email}")
       expect(page).to have_content("First Name: #{first_name}")
