@@ -29,14 +29,16 @@ describe "User Registration Form" do
       password_confirmation = "themenace"
       phone_number = "1-101-111-10101"
 
-      fill_in :first_name, with: first_name
-      fill_in :last_name, with: last_name
-      fill_in :email, with: email
-      fill_in :password, with: password
-      fill_in :password_confirmation, with: password_confirmation
-      fill_in :phone_number, with: phone_number
+      within("#form") do
+        fill_in :first_name, with: first_name
+        fill_in :last_name, with: last_name
+        fill_in :email, with: email
+        fill_in :password, with: password
+        fill_in :password_confirmation, with: password_confirmation
+        fill_in :phone_number, with: phone_number
 
-      click_on "Create User"
+        click_on "Create User"
+      end
       
       user = User.last
 
