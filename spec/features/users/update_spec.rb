@@ -23,13 +23,15 @@ describe "User Update" do
       last_name = "Rodriguez"
       email = "nickyrod@gmail.com"
 
-      fill_in :first_name, with: first_name
-      fill_in :last_name, with: last_name
-      fill_in :email, with: email
-      fill_in :password, with: user.password
-      fill_in :phone_number, with: user.phone_number
+      within("#form") do
+        fill_in :first_name, with: first_name
+        fill_in :last_name, with: last_name
+        fill_in :email, with: email
+        fill_in :password, with: user.password
+        fill_in :phone_number, with: user.phone_number
 
-      click_on "Update User"
+        click_on "Update User"
+      end
 
       expect(current_path).to eq(user_dashboard_index_path(user.id))
       expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
