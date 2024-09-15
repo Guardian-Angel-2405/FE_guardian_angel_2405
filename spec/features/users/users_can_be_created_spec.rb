@@ -37,8 +37,10 @@ describe "User Registration Form" do
       fill_in :phone_number, with: phone_number
 
       click_on "Create User"
+      
+      user = User.last
 
-      expect(current_path).to eq(user_dashboard_index_path)
+      expect(current_path).to eq(user_dashboard_index_path(user))
       expect(page).to have_content("Welcome, #{first_name} #{last_name}!")
     end
   end
