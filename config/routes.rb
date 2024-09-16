@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   
   resources :services, only: [:index, :show]
 
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 end
