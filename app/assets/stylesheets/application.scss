@@ -177,3 +177,11 @@ section {
 .nav-link.active {
   text-decoration: underline;
 }
+
+.helpline-item {
+  background-color: #e6f7ff; /* Bootstrap's light background color */
+  margin-bottom: 1.5rem; /* 24px */
+  padding: 1rem; /* 16px */
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
