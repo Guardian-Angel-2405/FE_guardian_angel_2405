@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     binding.pry
     if user.valid?
       session[:user.id] = user.id
-      redirect_to user_dashboard_index_path(user)
+      redirect_to "/users/#{session[:user.id]}/dashboard"
     else
       redirect_to "/login"
     end
