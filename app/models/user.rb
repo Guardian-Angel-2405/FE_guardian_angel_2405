@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :email, :password
+  validates_presence_of :email, :password_digest
   
   validates_uniqueness_of :email
 
@@ -10,8 +10,12 @@ class User < ApplicationRecord
   def self.from_omniauth(response)
     User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
       # u.username = response[:info][:name]
+      binding.pry
+      u.first_name = response[:info][:first_name]
+      u.last_name = response[:info][:last_name]
       u.email = response[:info][:email]
       u.password = SecureRandom.hex(15)
+
     end
   end
 end

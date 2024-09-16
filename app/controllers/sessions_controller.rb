@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
     
     binding.pry
     if user.valid?
-      session[:user.id] = user.id
-      redirect_to "/users/#{session[:user.id]}/dashboard"
+      session[:user_id] = user.id #research this and where it goes and why it is here?
+      #session[:token] =          #same here
+      redirect_to "/users/#{session[:user_id]}/dashboard"
     else
       redirect_to "/login"
     end
