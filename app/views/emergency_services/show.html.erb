@@ -32,7 +32,8 @@
   <% if @helpline['topics'].any? %>
     <ul>
       <% @helpline['topics'].each do |topic| %>
-        <li><%= topic %></li>
+        <%= topic %>
+        <br>
       <% end %>
     </ul>
   <% else %>
