@@ -1,8 +1,7 @@
-import { Application } from "@hotwired/stimulus"
 
-import "bootstrap"
-import "../stylesheets/application"
-import "@popperjs/core"
+
+// = require bootstrap
+// = require jquery3
 
 const application = Application.start()
 

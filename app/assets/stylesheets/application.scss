@@ -153,13 +153,13 @@ section {
   padding: 1px 0;
 }
 
-.nav-list {
+/* .nav-list {
   list-style-type: none;
   margin: 0;
   padding: 5;
   display: flex;
   justify-content: left;
-}
+} */
 
 .nav-logo-img {
   max-width: 70px;
@@ -168,11 +168,11 @@ section {
 
 }
 
-.nav-logo-text {
+/* .nav-logo-text {
   font-size: 1.5rem;
   color: #007acc;
-  text-decoration: none;
-}
+  text-decoration: none; 
+} */
 
 /* Nav Links underlined when on current path with conditionals using interpolation to insert 'active' if condition is met */
 .nav-link.active {
