@@ -4,6 +4,7 @@
     <h2>Log In</h2> 
   </div>
 
+<<<<<<< HEAD
 
 <div class="input">
   <%= form_with url: login_path, method: :post do |form| %>
@@ -16,4 +17,18 @@
     <%= form.submit "Log In", class: "submit" %>
   <% end %>
     <%= button_to "Log in with Google", '/auth/google_oauth2'%>
+=======
+<div id="form">
+  <div class="input">
+    <%= form_with url: login_path, method: :post do |form| %>
+      <%= form.label :email, "Email:" %>
+      <%= form.email_field :email, required: true, type: "email" %>
+      <br>
+      <%= form.label :password, "Password:" %>
+      <%= form.password_field :password, required: true, minlength: 6, type: "password" %>
+      <br>
+      <%= form.submit "Log In", class: "submit" %>
+    <% end %>
+  </div>
+>>>>>>> 8d3616d8db458fd9bdc6daf162a4cee5dcfb8480
 </div>

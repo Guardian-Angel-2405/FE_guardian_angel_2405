@@ -2,6 +2,13 @@
   <h1>Guardian Angel</h1>
   <h2>Welcome</h2>
   <h2><%=@user.first_name%> <%=@user.last_name %></h2>
+  <br>
+  <h4>User Details</h4> 
+  <p>First Name: <%=@user.first_name%></p>
+  <p>Last Name: <%=@user.last_name%></p>
+  <p>Email: <%=@user.email%></p>
+  <p>Phone Number: <%=@user.phone_number%></p>
+  <p>| <%= link_to "Edit Account Details", edit_user_path(@user), class: 'a'%> |</p>
 </div>
 
 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  resources :users, only: [:show, :index, :new, :create] do
+  resources :users, only: [:show, :index, :new, :create, :update, :edit] do
     resources :dashboard, only: [:index]
   end
   
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "about#index"
   
-  resources :services, only: [:index, :show]
+  resources :emergency_services, only: [:index, :show]
 
   get "/auth/:provider/callback", to: "sessions#omniauth"
 end
