@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   
   resources :emergency_services, only: [:index, :show]
 
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 end
