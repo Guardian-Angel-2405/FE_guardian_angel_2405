@@ -22,7 +22,6 @@ class HelplineService
   def self.get_helpline_details(helpline_id)
     response = connection.get("/helplines/#{helpline_id}")
     handle_response(response)
-    require 'pry' ; binding.pry
   end
   # Handle response to ensure its parsed or if there is an error
   def self.handle_response(response)

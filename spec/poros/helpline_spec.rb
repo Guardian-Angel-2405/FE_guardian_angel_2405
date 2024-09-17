@@ -43,7 +43,6 @@ RSpec.describe do
     }
 
     helpline = Helpline.new(incoming_data)
-    require 'pry' ; binding.pry
     expect(helpline).to be_a(Helpline)
     expect(helpline.id).to be_a(String)
     expect(helpline.name).to be_a(String)

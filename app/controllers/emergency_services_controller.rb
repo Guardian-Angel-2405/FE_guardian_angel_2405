@@ -11,6 +11,7 @@ class EmergencyServicesController < ApplicationController
   end
 
   def show
+    require 'pry' ; binding.pry
     @helpline = HelplineService.get_helpline_details(params[:id])
     helpline_poros(@helpline)
     if @helpline[:error]
