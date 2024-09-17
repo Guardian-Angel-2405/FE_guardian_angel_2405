@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 
 class HelplineService
-  BASE_URL = 'http://localhost:4567'  # Ensure this is a string
+  BASE_URL =  'https://throughline-sinatra-service-3b392556cf62.herokuapp.com'  # Ensure this is a string
 
   # Helper method to set up Faraday connection
   def self.connection
