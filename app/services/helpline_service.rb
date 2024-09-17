@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 
 class HelplineService
-  BASE_URL =  'https://throughline-sinatra-service-3b392556cf62.herokuapp.com'  # Ensure this is a string
+  BASE_URL = Rails.env.production? ? 'https://throughline-sinatra-service-3b392556cf62.herokuapp.com' : 'http://localhost:4567'
 
   # Helper method to set up Faraday connection
   def self.connection
