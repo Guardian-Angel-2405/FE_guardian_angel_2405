@@ -29,8 +29,9 @@
   <h4>Topics Covered</h4>
   <% if @helpline.topics.any? %>
     <ul>
-      <% @helpline.topics.each do |topic| %>
-        <li><%= topic %></li>
+      <% @helpline['topics'].each do |topic| %>
+        <%= topic %>
+        <br>
       <% end %>
     </ul>
   <% else %>
@@ -38,8 +39,9 @@
   <% end %>
   
   <h4>Country Information</h4>
-  <p><strong>Country:</strong> <%= @helpline.country.name %></p>
-  <p><strong>Emergency Number:</strong> <%= @helpline.country.emergencyNumber %></p>
+  <p><strong>Country:</strong> <%= @helpline['country']['name'] %></p>
+  <p><strong>Emergency Number:</strong> <%= @helpline['country']['emergencyNumber'] %></p>
+  <p><strong>Time Zone:</strong> <%= @helpline['timezone'] %></p>
 
   <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-primary' %>
 </div>
