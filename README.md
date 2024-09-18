@@ -11,6 +11,7 @@ You will need to have the Ruby 3.2.2 and Rails 7.1.4. This project utilizes the 
 ### Installing
 To install and use this repository on your local machine firt clone down this repository, and clone down the [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405) repository.
 Navigate through the console so that your are in the directories of each application (you will need two terminals open).
+Run `rails db:{create,migrate}` to establish the database. Then run `bundle install` to install all the gem dependencies. 
 Following this run `rails s` in each terminal. You should ensure that each console is running on a seperate `localhost` number. For example, `localhost:3000` for the backend repository and `localhost:4567` for the frontend. 
 Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application. By defualt the backend application should be `localhost:4567`.
 
