@@ -1,7 +1,7 @@
 class JournalsController < ApplicationController
   def index 
     @user = User.find(params[:user_id])
-
+    binding.pry
     @journals = JournalService.get_dates(@user.id)
     # refactor this:
     # helpline_poros(@helplines)
@@ -13,6 +13,7 @@ class JournalsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @journal = Journal.find(params[:id])
+    @date = params[:id]
+    @journal = JournalService.get_gratitude(@user.id, @date)
   end
 end
