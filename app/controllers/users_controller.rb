@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if user.update(user_params)
       redirect_to user_dashboard_index_path(user), notice: 'Profile was successfully updated.'
     else
-      render :edit
+      redirect_to edit_user_path(params[:id])
     end
   end
 

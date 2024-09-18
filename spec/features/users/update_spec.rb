@@ -55,11 +55,11 @@ describe "User Update" do
 
       fill_in "First Name:", with: first_name
       fill_in "Last Name:", with: last_name
-      fill_in "Email:", with: email
+      fill_in "Password:", with: password
 
       click_on "Update User"
 
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(edit_user_path(user.id))
     end
   end
 end
