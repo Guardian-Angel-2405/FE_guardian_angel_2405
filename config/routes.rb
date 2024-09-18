@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :users, only: [:show, :index, :new, :create, :update, :edit] do
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index]  
+    resources :journals, only: [:index, :show, :new, :create, :destroy]
   end
   
   get "/login", to: "users#login_form"
