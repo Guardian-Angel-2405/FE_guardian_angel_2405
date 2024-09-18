@@ -6,26 +6,19 @@
 
 <div class="body">
 
-  <!-- Error Message Handling -->
   <% if flash[:error] %>
     <div class="alert alert-danger">
       <%= flash[:error] %>
     </div>
   <% end %>
-
-  <% if @helplines.any? %>
+  
+  <% if @journals %>
     <ul class="helplines-list">
-      <% @journal.each do |journal| %>
-      <li class="helpline-item">
-        <strong><%= helpline['name']%></strong>  
-        <br />
-        <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
-        <br />
-        <%= link_to 'View Details', user_journal_path(helpline['id']), class: 'btn btn-info' %>
-        </li>
+      <% @journals[:data].each do |journal| %>
+        <p>| <%= journal[:attributes][:date]%> | <%= link_to "Journal Show", user_journal_path(@user, journal[:id]), class: 'btn btn-info' %> </p>
       <% end %>
       </ul>
-    <% else %>
-      <p>No helplines available</p>
-    <% end %>
+  <% else %>
+    <p>No Entries Have Been Made</p>
+  <% end %>
 </div>

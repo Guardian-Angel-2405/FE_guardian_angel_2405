@@ -2,9 +2,7 @@ class JournalsController < ApplicationController
   def index 
     @user = User.find(params[:user_id])
 
-    @journal = JournalService.get_dates(@user.id)
-
-    binding.pry
+    @journals = JournalService.get_dates(@user.id)
     # refactor this:
     # helpline_poros(@helplines)
     # if @helplines.is_a?(Hash) && @helplines[:error]
@@ -15,6 +13,6 @@ class JournalsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @entry = Journal.find(params[:id])
+    @journal = Journal.find(params[:id])
   end
 end

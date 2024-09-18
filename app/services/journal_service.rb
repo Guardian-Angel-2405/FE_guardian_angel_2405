@@ -16,7 +16,6 @@ class JournalService
 
     response = connection.get("/api/v0/gratitudes/#{user_id}/dates")
     JSON.parse(response.body, symbolize_names: true)
-
     # handle_response(response)
   end
 
