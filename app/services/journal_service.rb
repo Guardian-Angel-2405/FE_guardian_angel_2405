@@ -10,9 +10,13 @@ class JournalService
   end
 
   # Fetch specific helpline details by ID
-  def self.get_helpline_details(journal_id)
-    response = connection.get("/journals/#{journal_id}")
-    handle_response(response)
+  def self.get_dates(user_id)
+    
+    connection = Faraday.new(url: 'localhost:3000')
+
+    response = connection.get("/api/v0/gratitudes/#{user_id}/dates")
+
+    # handle_response(response)
   end
 
   # Handle response to ensure it's parsed or handle an error
