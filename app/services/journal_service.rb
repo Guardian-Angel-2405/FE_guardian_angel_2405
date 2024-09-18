@@ -12,9 +12,10 @@ class JournalService
   # Fetch specific helpline details by ID
   def self.get_dates(user_id)
     
-    connection = Faraday.new(url: 'localhost:3000')
+    connection = Faraday.new(url: "http://localhost:3000")
 
     response = connection.get("/api/v0/gratitudes/#{user_id}/dates")
+    JSON.parse(response.body, symbolize_names: true)
 
     # handle_response(response)
   end
