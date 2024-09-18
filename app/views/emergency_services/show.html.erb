@@ -6,17 +6,17 @@
   <h3><%= @helpline.name %></h3>
   <p><strong>Description:</strong> <%= @helpline.description %></p>
   
-  <% if @helpline.phoneNumber.present? %>
-    <p><strong>Phone Number:</strong> <%= @helpline.phoneNumber %></p>
+  <% if @helpline.phone_number.present? %>
+    <p><strong>Phone Number:</strong> <%= @helpline.phone_number %></p>
   <% end %>
   
-  <% if @helpline.smsNumber.present? %>
-    <p><strong>SMS Number:</strong> <%= @helpline.smsNumber %></p>
+  <% if @helpline.sms_number.present? %>
+    <p><strong>SMS Number:</strong> <%= @helpline.sms_number %></p>
   <% end %>
   
-  <% if @helpline.webChatUrl.present? %>
+  <% if @helpline.web_chat_url.present? %>
     <p><strong>Web Chat:</strong> 
-      <a href="<%= @helpline.webChatUrl %>" target="_blank"><%= @helpline.webChatUrl %></a>
+      <a href="<%= @helpline.web_chat_url %>" target="_blank"><%= @helpline.web_chat_url %></a>
     </p>
   <% end %>
   
@@ -29,8 +29,8 @@
   <h4>Topics Covered</h4>
   <% if @helpline.topics.any? %>
     <ul>
-      <% @helpline['topics'].each do |topic| %>
-        <%= topic %>
+      <% @helpline.topics.each do |topic| %>
+      <li>  <%= topic %> </li>
         <br>
       <% end %>
     </ul>
@@ -39,9 +39,9 @@
   <% end %>
   
   <h4>Country Information</h4>
-  <p><strong>Country:</strong> <%= @helpline['country']['name'] %></p>
-  <p><strong>Emergency Number:</strong> <%= @helpline['country']['emergencyNumber'] %></p>
-  <p><strong>Time Zone:</strong> <%= @helpline['timezone'] %></p>
+<p><strong>Country:</strong> <%= @helpline.country['name'] %></p>
+<p><strong>Emergency Number:</strong> <%= @helpline.country['emergencyNumber'] %></p>
+<p><strong>Time Zone:</strong> <%= @helpline.timezone %></p>
 
   <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-primary' %>
 </div>
