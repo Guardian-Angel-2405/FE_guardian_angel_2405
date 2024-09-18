@@ -1,14 +1,11 @@
-require 'faraday'
-require 'json'
-
 class HelplineService
-  BASE_URL = Rails.env.production? ? 'https://throughline-sinatra-service-3b392556cf62.herokuapp.com' : 'http://localhost:4567'
+  # Always use the Heroku URL for the Sinatra service
+  BASE_URL = 'https://throughline-sinatra-service-3b392556cf62.herokuapp.com'
 
-  # Helper method to set up Faraday connection
   def self.connection
     Faraday.new(url: BASE_URL) do |faraday|
       faraday.adapter Faraday.default_adapter
-      faraday.ssl[:verify] = false  # Disable SSL verification for localhost
+      # SSL verification is not needed for Heroku-hosted services
     end
   end
 
@@ -23,7 +20,8 @@ class HelplineService
     response = connection.get("/helplines/#{helpline_id}")
     handle_response(response)
   end
-  # Handle response to ensure its parsed or if there is an error
+
+  # Handle response to ensure it's parsed or handle an error
   def self.handle_response(response)
     if response.success?
       JSON.parse(response.body)
@@ -31,6 +29,7 @@ class HelplineService
       handle_error(response)
     end
   end
+
   # Handle error  
   def self.handle_error(response)
     Rails.logger.error("HelplineService API Error: #{response.status} - #{response.body}")
