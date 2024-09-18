@@ -1,0 +1,31 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+
+  <h2>Gratitude Entries By Date</h2> 
+</div>
+
+<div class="body">
+
+  <!-- Error Message Handling -->
+  <% if flash[:error] %>
+    <div class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <% if @helplines.any? %>
+    <ul class="helplines-list">
+      <% @journal.each do |journal| %>
+      <li class="helpline-item">
+        <strong><%= helpline['name']%></strong>  
+        <br />
+        <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
+        <br />
+        <%= link_to 'View Details', user_journal_path(helpline['id']), class: 'btn btn-info' %>
+        </li>
+      <% end %>
+      </ul>
+    <% else %>
+      <p>No helplines available</p>
+    <% end %>
+</div>
