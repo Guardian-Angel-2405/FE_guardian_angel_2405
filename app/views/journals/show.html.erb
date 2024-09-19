@@ -5,7 +5,7 @@
 
 <div class="body">
   <h3> Remeber </h3>
-  <p> <%= @journal[:quote][:affirmation]%> </p>
+  <p> <%= @journal[:data][0][:attributes][:quote][:affirmation]%> </p>
 
   <% if @journal[:errors] %>
     <div class="alert alert-danger">

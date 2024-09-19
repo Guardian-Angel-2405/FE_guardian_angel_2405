@@ -12,8 +12,7 @@ class JournalsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    require 'pry' ; binding.pry
-    @date = params[:id]
-    @journal = JournalService.get_gratitude(@user.id, @date)
+    @date_id = params[:id]
+    @journal = JournalService.get_gratitude(@user.id, @date_id)
   end
 end
