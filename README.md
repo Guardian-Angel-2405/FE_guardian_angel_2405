@@ -26,7 +26,8 @@ Add additional notes to deploy this on a live system
     for the Code of Conduct
   - [Creative Commons](https://creativecommons.org/) - Used to choose the license
   - [ThroughLine]([https://www.example.com](https://api.throughlinecare.com/users/sign_in))
-  - [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405)
+  - [Guardian Angel Sinatra BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405)
+  - [Guardian Angel Journal BE Repository](https://github.com/Guardian-Angel-2405/BE_JOURNAL_guardian_angel_2405)
 ## Contributing
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for submitting pull requests to us.
