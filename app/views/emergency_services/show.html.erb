@@ -2,38 +2,41 @@
   <h1>Guardian Angel</h1>
   <h2>Emergency Service Details</h2>
 </div>
+
 <div class="body">
-  <div class = "container-sm helpline-item mb-4 p-3 border rounded">
-  <h3><%= @helpline.name %></h3>
-  
-    <button class = "btn-sm mt-2"data-bs-toggle="collapse" data-bs-target="#description">
+  <div class="container-sm helpline-item mb-4 p-3 border rounded">
+    <h3><%= @helpline.name %></h3>
+
+    <button class="btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#description">
       <strong>Description</strong> <span style="font-size: 0.7em;">&#x25BC;</span>
     </button>
     <div id="description" class="collapse">
       <p><%= @helpline.description %></p>
     </div>
-  
+
     <% if @helpline.phone_number.present? %>
-      <p class = "mt-3" ><strong>Phone Number:</strong> <%= @helpline.phone_number %></p>
+      <p class="mt-3"><strong>Phone Number:</strong> <%= @helpline.phone_number %></p>
     <% end %>
-  
-    <% if @helpline.name.present? %>
+
+    <% if @helpline.sms_number.present? %>
       <p><strong>SMS Number:</strong> <%= @helpline.sms_number %></p>
     <% end %>
-  
+
     <% if @helpline.web_chat_url.present? %>
       <p><strong>Web Chat:</strong> 
         <a href="<%= @helpline.web_chat_url %>" target="_blank"><%= @helpline.web_chat_url %></a>
       </p>
     <% end %>
+
     <% if @helpline.website.present? %>
       <p><strong>Website:</strong> 
         <a href="<%= @helpline.website %>" target="_blank"><%= @helpline.website %></a>
       </p>
     <% end %>
   </div>
-  <div class = "container-sm helpline-item mb-4 p-3 border rounded">
-  <h4>Topics Covered</h4>
+
+  <div class="container-sm helpline-item mb-4 p-3 border rounded">
+    <h4>Topics Covered</h4>
     <% if @helpline.topics.any? %>
       <ul>
         <% @helpline.topics.each do |topic| %>
@@ -45,11 +48,11 @@
     <% end %>
   </div>
 
-  <div class = "container-sm helpline-item mb-4 p-3 border rounded">
+  <div class="container-sm helpline-item mb-4 p-3 border rounded">
     <h4>Country Information</h4>
-    <p><strong>Country:</strong> <%= @helpline.country["name"] %></p>
-    <p><strong>Emergency Number:</strong> <%= @helpline.emergency_number%></p>
-
+    <p><strong>Country:</strong> <%= @helpline.country['name'] %></p>
+    <p><strong>Emergency Number:</strong> <%= @helpline.emergency_number %></p>
+    <p><strong>Timezone:</strong> <%= @helpline.timezone %></p>
 
     <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-sm' %>
   </div>
