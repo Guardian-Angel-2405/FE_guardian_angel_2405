@@ -21,7 +21,6 @@
       <% @helplines.each do |helpline| %>
       <div class="container-sm helpline-item mb-4 p-3 border rounded">
         <p class = "text-center"><strong><%= helpline['name']%></strong> : <%= helpline['description']%> </p>
-
         <br />
         <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
         <br />
