@@ -5,6 +5,8 @@ ruby "3.2.2"
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 
+gem "rails_12factor"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.4"
 
@@ -48,6 +50,11 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "faraday"
+gem "dotenv-rails"
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -61,7 +68,7 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "shoulda-matchers", "~> 5.0"
-  gem "webmock"
+  # gem "webmock"
   gem "vcr"
 end
 

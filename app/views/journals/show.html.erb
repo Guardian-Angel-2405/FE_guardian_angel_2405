@@ -1,0 +1,18 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+  <h2>Entry</h2> 
+</div>
+
+<div class="body">
+  <h3> Remeber </h3>
+  <p> <%= @journal[:quote][:affirmation]%> </p>
+
+  <% if @journal[:errors] %>
+    <div class="alert alert-danger">
+      <p> <%= @journal[:errors][1]%> </p>
+      <p> <%= @journal[:errors][2]%> </p>
+    </div>
+  <% end %>
+  
+  <%= link_to "All Entries", user_journals_path(@user),class: 'btn btn-info' %> </p>
+</div>

@@ -2,7 +2,6 @@
   <h1>Guardian Angel</h1>
   <h2>Emergency Service Details</h2>
 </div>
-
 <div class="body">
   <div class = "container-sm helpline-item mb-4 p-3 border rounded">
   <h3><%= @helpline['name'] %></h3>
@@ -22,7 +21,6 @@
         <a href="<%= @helpline['webChatUrl'] %>" target="_blank"><%= @helpline['webChatUrl'] %></a>
       </p>
     <% end %>
-  
     <% if @helpline['website'].present? %>
       <p><strong>Website:</strong> 
         <a href="<%= @helpline['website'] %>" target="_blank"><%= @helpline['website'] %></a>
@@ -46,6 +44,7 @@
     <h4>Country Information</h4>
     <p><strong>Country:</strong> <%= @helpline['country']['name'] %></p>
     <p><strong>Emergency Number:</strong> <%= @helpline['country']['emergencyNumber'] %></p>
+
 
     <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-primary' %>
   </div>
