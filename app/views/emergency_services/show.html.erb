@@ -6,10 +6,15 @@
   <div class = "container-sm helpline-item mb-4 p-3 border rounded">
   <h3><%= @helpline.name %></h3>
   
-    <p><strong>Description:</strong> <%= @helpline.description %></p>
+    <button class = "btn-sm mt-2"data-bs-toggle="collapse" data-bs-target="#description">
+      <strong>Description</strong> <span style="font-size: 0.7em;">&#x25BC;</span>
+    </button>
+    <div id="description" class="collapse">
+      <p><%= @helpline.description %></p>
+    </div>
   
     <% if @helpline.phone_number.present? %>
-      <p><strong>Phone Number:</strong> <%= @helpline.phone_number %></p>
+      <p class = "mt-3" ><strong>Phone Number:</strong> <%= @helpline.phone_number %></p>
     <% end %>
   
     <% if @helpline.name.present? %>
@@ -46,6 +51,6 @@
     <p><strong>Emergency Number:</strong> <%= @helpline.emergency_number%></p>
 
 
-    <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-primary' %>
+    <%= link_to 'Back to Emergency Services', emergency_services_path, class: 'btn btn-sm' %>
   </div>
 </div>
