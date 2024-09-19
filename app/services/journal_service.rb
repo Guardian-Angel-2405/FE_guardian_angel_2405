@@ -20,10 +20,10 @@ class JournalService
   end
   
   # Fetch one entry based on the user and the entry id 
-  def self.get_gratitude(user_id, entry_id)
+  def self.get_gratitude(user_id, date_id)
     connection = Faraday.new(url: "http://localhost:3000")
 
-    response = connection.get("/api/v0/gratitudes/#{user_id}/dates/#{entry_id}")
+    response = connection.get("/api/v0/gratitudes/#{user_id}/dates/#{date_id}")
     JSON.parse(response.body, symbolize_names: true)
     # handle_response(response)
   end

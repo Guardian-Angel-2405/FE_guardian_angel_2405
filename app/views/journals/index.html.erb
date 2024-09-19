@@ -15,7 +15,7 @@
   <% if @journals %>
     <ul class="helplines-list">
       <% @journals[:data].each do |journal| %>
-        <p>| <%= journal[:attributes][:date]%> | <%= link_to "Journal Show", user_journal_path(@user, journal[:id]),class: 'btn btn-info' %> </p>
+        <p>| <%= journal[:attributes][:date]%> | <%= link_to "Journal Show", user_journal_path(@user, journal[:attributes][:date]),class: 'btn btn-info' %> </p>
       <% end %>
       </ul>
   <% else %>
