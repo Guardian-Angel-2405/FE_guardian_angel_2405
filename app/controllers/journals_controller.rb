@@ -17,7 +17,7 @@ class JournalsController < ApplicationController
   def create
     user = User.find(params[:user_id])
 
-    connection = Faraday.new(url: "http://localhost:3000")
+    connection = Faraday.new(url: 'https://guardian-angel-be-b74ba0b4e0bc.herokuapp.com')
   
     response = connection.post("/api/v0/gratitudes") do |gratitude|
       gratitude.params[:user_id] = params["user_id"]
