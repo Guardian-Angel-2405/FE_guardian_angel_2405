@@ -21,13 +21,5 @@
   <% else %>
     <p>No Entries Have Been Made</p>
   <% end %>
-  
-  <div class="input">
-    <%= form_with url: new_user_journal_path, method: :post do |form| %>
-      <%= form.label :date, "Date:" %>
-      <%= form.date_field :date, required: true%>
-      <br>
-      <%= form.submit "Select Date", class: "submit" %>
-    <% end %>
-  </div>
+  <p>| <%= link_to "Create Gratitude Entry", new_user_journal_path(@user),class: 'btn btn-info' %> |</p>
 </div>
