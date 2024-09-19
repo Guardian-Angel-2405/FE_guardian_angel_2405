@@ -1,6 +1,6 @@
 class JournalService
-  # Always use the Heroku URL for the Sinatra service
-  BASE_URL = 'https://throughline-sinatra-service-3b392556cf62.herokuapp.com'
+  # Always use the Heroku URL for the Journal service
+  BASE_URL = 'https://guardian-angel-be-b74ba0b4e0bc.herokuapp.com'
 
   def self.connection
     Faraday.new(url: BASE_URL) do |faraday|
@@ -12,7 +12,7 @@ class JournalService
   # Fetch specific entries based on the users ID
   def self.get_dates(user_id)
     
-    connection = Faraday.new(url: "http://localhost:3000")
+    connection = Faraday.new(url: BASE_URL)
 
     response = connection.get("/api/v0/gratitudes/#{user_id}/dates")
     JSON.parse(response.body, symbolize_names: true)
@@ -21,7 +21,7 @@ class JournalService
   
   # Fetch one entry based on the user and the entry id 
   def self.get_gratitude(user_id, date_id)
-    connection = Faraday.new(url: "http://localhost:3000")
+    connection = Faraday.new(url: BASE_URL)
 
     response = connection.get("/api/v0/gratitudes/#{user_id}/dates/#{date_id}")
     JSON.parse(response.body, symbolize_names: true)

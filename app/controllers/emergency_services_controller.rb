@@ -17,6 +17,7 @@ class EmergencyServicesController < ApplicationController
     if helpline_data[:error] || helpline_data['error'] # Check for error in the raw data
       flash[:error] = helpline_data[:error] || helpline_data['error']
       @helpline = nil
+      redirect_to emergency_services_path
     else
       @helpline = Helpline.new(helpline_data) # Initialize the Helpline PORO only if there's no error
     end

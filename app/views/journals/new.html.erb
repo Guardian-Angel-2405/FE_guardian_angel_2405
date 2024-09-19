@@ -1,0 +1,17 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+
+  <h2>Your Entry</h2> 
+</div>
+
+<div class="input">
+  <%= form_with url: user_journals_path, method: :post do |form| %>
+    <%= form.label :date, "Date:" %>
+    <%= form.date_field :date, required: true%>
+    <br>
+    <%= form.label :entry, "Entry:" %>
+    <%= form.text_field :entry, required: true%>
+    <br>
+    <%= form.submit "Save Entry", class: "submit" %>
+  <% end %>
+</div>
