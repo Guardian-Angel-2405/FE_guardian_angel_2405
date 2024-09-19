@@ -1,0 +1,24 @@
+<div class="welcome-section">
+  <h1>Guardian Angel</h1> 
+
+  <h2>Gratitude Entries By Date</h2> 
+</div>
+
+<div class="body">
+
+  <% if flash[:error] %>
+    <div class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+  
+  <% if @journals %>
+    <ul class="helplines-list">
+      <% @journals[:data].each do |journal| %>
+        <p>| <%= journal[:attributes][:date]%> | <%= link_to "Journal Show", user_journal_path(@user, journal[:id]),class: 'btn btn-info' %> </p>
+      <% end %>
+      </ul>
+  <% else %>
+    <p>No Entries Have Been Made</p>
+  <% end %>
+</div>

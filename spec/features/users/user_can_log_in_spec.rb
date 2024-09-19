@@ -10,7 +10,7 @@ RSpec.describe "Logging In" do
 
     expect(current_path).to eq(login_path)
 
-    within("#form") do
+    within(".input") do
       fill_in :email, with: user.email
       fill_in :password, with: user.password
     end
@@ -27,7 +27,7 @@ RSpec.describe "Logging In" do
 
     visit login_path
   
-    within("#form") do
+    within(".input") do
       fill_in :email, with: user.email
       fill_in :password, with: "incorrect password"
     end

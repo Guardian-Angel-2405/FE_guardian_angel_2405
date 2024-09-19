@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :users, only: [:show, :index, :new, :create, :update, :edit] do
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index]  
+    resources :journals, only: [:index, :show, :new, :create, :destroy]
   end
   
   get "/login", to: "users#login_form"
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   
   resources :emergency_services, only: [:index, :show]
 
+  get "/auth/:provider/callback", to: "sessions#omniauth"
 end
