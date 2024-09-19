@@ -30,7 +30,9 @@ class JournalService
   end
 
   def self.conn
-    connection = Faraday.new(url: "http://localhost:3000")
+    connection = Faraday.new(url: "http://localhost:3000") do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
   end
   # Handle error  
   def self.handle_error(response)
