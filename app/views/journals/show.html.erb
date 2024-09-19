@@ -6,7 +6,9 @@
 <div class="body">
   <h2>Gratitude List</h2> 
   <% @journal[:data].each do |entry| %>
-    <p> <li> <%= entry[:attributes][:entry] %> </li> </p>
+    <% if entry[:attributes][:date] == @date %>
+      <p> <li> <%= entry[:attributes][:entry] %> </li> </p>
+    <% end %>
   <% end %>
 
   <br>
