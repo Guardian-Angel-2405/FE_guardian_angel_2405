@@ -6,7 +6,7 @@ class JournalsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @date= params[:id]
+    @date = params[:id]
     @journal = JournalService.get_gratitude(@user.id, @date_id)
   end
 
