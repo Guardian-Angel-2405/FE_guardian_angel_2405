@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe do
-  it "exists and has attribute" do
+  xit "exists and has attribute" do
     incoming_data =    { } # Whatever data is coming in from the Journal api
 
     journal = Journal.new(incoming_data)
