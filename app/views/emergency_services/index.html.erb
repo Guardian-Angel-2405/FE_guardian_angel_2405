@@ -1,46 +1,68 @@
 <div class="welcome-section">
-  <h1>Guardian Angel</h1> 
-
-  <h2>Emergency Services</h2> 
+  <h1>Guardian Angel</h1>
+  <h2>Emergency Services</h2>
 </div>
 
 <div class="body">
-  <p>Available Emergecy Services</p>
+  <p>Available Emergency Services</p>
 
-  <!-- Error Message Handling -->
   <% if flash[:error] %>
     <div class="alert alert-danger">
       <%= flash[:error] %>
     </div>
   <% end %>
-</div>
-  <!-- Helplines List -->
-<div class = 'container-sm'>
-  <% if @helplines.any? %>
-    <ul class="helplines-list list-unstyled"> 
-      <% @helplines.each do |helpline| %>
-      <div class="container-sm helpline-item mb-4 p-3 border rounded">
-        <p class = "text-center"><strong><%= helpline['name']%></strong></p>
-        <br />
-        
-        <% if helpline['description'].present? %>
-          <button class="mb-2 btn-sm" data-bs-toggle="collapse" data-bs-target="#hl-description<%= helpline['id'] %>"> View Description <span style="font-size: 0.7em;">&#x25BC;</span> </button>
-          <div id="hl-description<%= helpline['id'] %>" class="collapse">
-            <p><%= helpline['description'] %></p>
+
+  <div class="container-sm">
+    <% if @paginated_helplines.any? %>
+      <ul class="helplines-list list-unstyled">
+        <% @paginated_helplines.each do |helpline| %>
+          <div class="container-sm helpline-item mb-4 p-3 border rounded">
+            <p class="text-center"><strong><%= helpline.name %></strong></p>
+            <br />
+
+            <% if helpline.description.present? %>
+              <button class="mb-2 btn-sm" data-bs-toggle="collapse" data-bs-target="#hl-description<%= helpline.id %>">
+                View Description <span style="font-size: 0.7em;">&#x25BC;</span>
+              </button>
+              <div id="hl-description<%= helpline.id %>" class="collapse">
+                <p><%= helpline.description %></p>
+              </div>
+            <% else %>
+              <p>No description</p>
+            <% end %>
+
+            <br />
+            <a href="<%= helpline.website %>" target="_blank" class="mt-4 d-block"><%= helpline.website %></a>
+            <br />
+            <%= link_to 'View Details', emergency_service_path(helpline.id), class: 'btn btn-info mt-2' %>
           </div>
-        <% else %>
-          <p>No description</p>
         <% end %>
-        
-        <br />
-        <a href="<%= helpline['website'] %>" target=" _blank" class="mt-4 d-block"><%= helpline['website']%></a>
-        <br />
-        <%= link_to 'View Details', emergency_service_path(helpline['id']), class: 'btn btn-info mt-2' %>
-      </div>
-      <% end %>
       </ul>
+
+      <!-- Pagination Controls -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <% if @current_page > 1 %>
+            <li class="page-item">
+              <%= link_to 'Previous', emergency_services_path(page: @current_page - 1), class: 'page-link' %>
+            </li>
+          <% end %>
+
+          <% (1..@total_pages).each do |page| %>
+            <li class="page-item <%= 'active' if page == @current_page %>">
+              <%= link_to page, emergency_services_path(page: page), class: 'page-link' %>
+            </li>
+          <% end %>
+
+          <% if @current_page < @total_pages %>
+            <li class="page-item">
+              <%= link_to 'Next', emergency_services_path(page: @current_page + 1), class: 'page-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
     <% else %>
       <p>No helplines available</p>
     <% end %>
+  </div>
 </div>
-
