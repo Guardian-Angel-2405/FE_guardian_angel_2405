@@ -8,7 +8,6 @@ class JournalsController < ApplicationController
     #   flash[:error] = @helplines[:error]
     #   @helplines = []
     # end
-    binding.pry
   end
 
   def show
@@ -17,21 +16,21 @@ class JournalsController < ApplicationController
     @journal = JournalService.get_gratitude(@user.id, @date_id)
   end
 
-  
   def new
-    @user = User.new
+    @user = User.find(params[:user_id])
   end
 
   def create
-    @user = User.new(user_params)  
+    @user = User.find(params[:user_id])
+
+    connection = Faraday.new(url: "http://localhost:3000")
     
-    if @user.save 
-      session[:user_id] = @user.id
-      flash[:success] = "Welcome, #{@user.first_name}!"
-      redirect_to user_dashboard_index_path(@user.id)
-    elsif !@user.save
-      flash[:error] = "There was a problem creating your account. Please check the form for errors."
-      render :new  
+    response = connection.post("/api/v0/gratitudes") do |gratitude|
+      gratitude.params[:user_id] = params["user_id"]
+      gratitude.params[:date] = params["date"]
+      gratitude.params[:entry] = params["entry"]
     end
+    
+    redirect_to user_journals_path(@user)
   end
 end
