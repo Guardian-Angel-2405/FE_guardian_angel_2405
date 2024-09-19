@@ -21,7 +21,7 @@ class JournalsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    user = User.find(params[:user_id])
 
     connection = Faraday.new(url: "http://localhost:3000")
     
@@ -30,7 +30,7 @@ class JournalsController < ApplicationController
       gratitude.params[:date] = params["date"]
       gratitude.params[:entry] = params["entry"]
     end
-    
-    redirect_to user_journals_path(@user)
+
+    redirect_to user_journals_path(user)
   end
 end
