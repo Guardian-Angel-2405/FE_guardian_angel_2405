@@ -13,18 +13,20 @@
       <%= flash[:error] %>
     </div>
   <% end %>
-
+</div>
   <!-- Helplines List -->
+<div class = 'container-sm'>
   <% if @helplines.any? %>
-    <ul class="helplines-list">
+    <ul class="helplines-list list-unstyled">
       <% @helplines.each do |helpline| %>
-      <li class="helpline-item">
-        <strong><%= helpline['name']%></strong>  
+      <div class="container-sm helpline-item mb-4 p-3 border rounded">
+        <p class = "text-center"><strong><%= helpline['name']%></strong> : <%= helpline['description']%> </p>
+
         <br />
         <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
         <br />
-        <%= link_to 'View Details', emergency_service_path(helpline['id']), class: 'btn btn-info' %>
-        </li>
+        <%= link_to 'View Details', emergency_service_path(helpline['id']), class: 'btn btn-info mt-2' %>
+      </div>
       <% end %>
       </ul>
     <% else %>
