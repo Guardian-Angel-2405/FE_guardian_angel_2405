@@ -4,7 +4,13 @@
 </div>
 
 <div class="body">
-  <h3> Remeber </h3>
+  <h2>Gratitude List</h2> 
+  <% @journal[:data].each do |entry| %>
+    <p> <li> <%= entry[:attributes][:entry] %> </li> </p>
+  <% end %>
+
+  <br>
+  <h3> Remember... </h3>
   <p> <%= @journal[:data][0][:attributes][:quote][:affirmation]%> </p>
 
   <% if @journal[:errors] %>
