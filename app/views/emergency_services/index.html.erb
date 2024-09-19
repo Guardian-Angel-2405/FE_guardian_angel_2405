@@ -17,12 +17,23 @@
   <!-- Helplines List -->
 <div class = 'container-sm'>
   <% if @helplines.any? %>
-    <ul class="helplines-list list-unstyled">
+    <ul class="helplines-list list-unstyled"> 
       <% @helplines.each do |helpline| %>
       <div class="container-sm helpline-item mb-4 p-3 border rounded">
-        <p class = "text-center"><strong><%= helpline['name']%></strong> : <%= helpline['description']%> </p>
+        <p class = "text-center"><strong><%= helpline['name']%></strong></p>
         <br />
-        <a href="<%= helpline['website'] %>" target=" _blank"><%= helpline['website']%></a>
+        
+        <% if helpline['description'].present? %>
+          <button class="mb-2 btn-sm" data-bs-toggle="collapse" data-bs-target="#hl-description<%= helpline['id'] %>"> View Description <span style="font-size: 0.7em;">&#x25BC;</span> </button>
+          <div id="hl-description<%= helpline['id'] %>" class="collapse">
+            <p><%= helpline['description'] %></p>
+          </div>
+        <% else %>
+          <p>No description</p>
+        <% end %>
+        
+        <br />
+        <a href="<%= helpline['website'] %>" target=" _blank" class="mt-4 d-block"><%= helpline['website']%></a>
         <br />
         <%= link_to 'View Details', emergency_service_path(helpline['id']), class: 'btn btn-info mt-2' %>
       </div>
