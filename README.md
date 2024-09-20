@@ -48,6 +48,8 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
     [GitHub](https://github.com/LancePants97)
 - **Jan Lehigh** - *BE and FE Engineer* -
     [GitHub](https://github.com/JCL461437)
+- **Tyler Noble** - *BE and FE Engineer* -
+    [GitHub](https://github.com/tnoble-cmd)
 - **Kat Brandt** - *BE and FE Project Manager* -
 ## License
 This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
