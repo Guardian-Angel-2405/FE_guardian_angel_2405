@@ -33,8 +33,7 @@ Instead of locally running all of the repositories, you can visit the deployed [
 ## Contributing
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for submitting pull requests to us.
-## Versioning![guardian_angel_logo](https://github.com/user-attachments/assets/0651222d-d034-4c4c-9b39-b414395af29b)
-
+## Versioning
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
 available, see the [tags on this
 repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
