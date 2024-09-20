@@ -1,10 +1,10 @@
 # Guardian Angel Frontend Repository
 ![guardian_angel_logo](https://github.com/user-attachments/assets/836291c1-b7b2-4c23-8559-51d4c90521d4)
-‘Guardian Angel’ is a full stack Rails application that will allow users to create an account and gain access to resources that can boost mental health and/or help in times of crisis. Users will be able to select from a list of emotions and feelings as many times per day as they wish. By accessing the ‘ThroughLine API’, a list of helpful resources will be returned to the user, including, but not limited to, phone numbers, sms hotlines, support groups, and relevant, helpful websites. 
+‘Guardian Angel’ is a full stack Rails application that will allow users to create an account and gain access to resources that can boost mental health and/or help in times of crisis. Users will be able to select from a list of emotions and feelings as many times per day as they wish. By accessing the ‘ThroughLine API’, a list of helpful resources will be returned to the user, including, but not limited to, phone numbers, sms hotlines, support groups, and relevant, helpful websites.
+
+The Guardian Angel Frontend Repository provides an enviroment for a user to interact with the services provided by the backend repositories. Users can create an account, make daily gratitude/journal entries, and view various emergency services.
 ## Getting Started
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+If you are using the deployed version of the site, no additional set up is required. See the deployment section for more information. If you want to run this repository locally, read the Prereequisites and Installing sections of the docs. 
 ### Prerequisites
 You will need to have the Ruby 3.2.2 and Rails 7.1.4. This project utilizes the ThroughLine API which is consumed by a separate backend application. 
 - [ThroughLine]([https://www.example.com](https://api.throughlinecare.com/users/sign_in))
@@ -16,6 +16,7 @@ Navigate through the console so that your are in the directories of each applica
 Run `rails db:{create,migrate}` to establish the database. Then run `bundle install` to install all the gem dependencies (for the Sinatra application all you will need to do is run `ruby app.rb` in addition to bundle). 
 Following this run `rails s` in each terminal for the Rails application. You should ensure that each console is running on a separate `localhost` number. For example, `localhost:5000` for the front end repository and `localhost:4567` for the sinatra backend, and `localhost:3000` for the Journal BE repository. These values are already set by default in each repository but you can change it by going to the `puma.rb` files in the `config` directory for the Rails applications. By default sinatra will assign the port number `4567`.
 Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application. By default the backend application should be `localhost:5000`.
+NOTE! You will need to go into the `app/services` directory and change the tests so that you the `BASE_URL` variable along with altering `emergency_services_controller.rb` and the `journals_controller.rb` files in the `app/controllers` directory to the respective `localhost` ports. Setting up those values are described above. 
 
 Alternatively you can utilize the deployed version of the site here: [Heroku Site](https://guardian-angel-5f5f5ba49dc1.herokuapp.com/login).
 
