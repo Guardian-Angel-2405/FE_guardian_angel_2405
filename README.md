@@ -7,20 +7,21 @@ for notes on deploying the project on a live system.
 ### Prerequisites
 You will need to have the Ruby 3.2.2 and Rails 7.1.4. This project utilizes the ThroughLine API which is consumed by a separate backend application. 
 - [ThroughLine]([https://www.example.com](https://api.throughlinecare.com/users/sign_in))
-- [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405)
+- [Guardian Angel Sinatra BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405)
+- [Guardian Angel Journal BE Repository](https://github.com/Guardian-Angel-2405/BE_JOURNAL_guardian_angel_2405)
 ### Installing
-To install and use this repository on your local machine first clone down this repository, and clone down the [Guardian Angel BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405) repository.
-Navigate through the console so that your are in the directories of each application (you will need two terminals open).
-Run `rails db:{create,migrate}` to establish the database. Then run `bundle install` to install all the gem dependencies. 
-Following this run `rails s` in each terminal. You should ensure that each console is running on a separate `localhost` number. For example, `localhost:3000` for the backend repository and `localhost:4567` for the frontend. 
-Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application. By default the backend application should be `localhost:4567`.
+To install and use this repository on your local machine first clone down this repository, then clone down the [Guardian Angel Sinatra BE Repository](https://github.com/Guardian-Angel-2405/BE_API_guardian_angel_2405) and [Guardian Angel Journal BE Repository](https://github.com/Guardian-Angel-2405/BE_JOURNAL_guardian_angel_2405) repository.
+Navigate through the console so that your are in the directories of each application (you will need a terminals open for each of the three repositories).
+Run `rails db:{create,migrate}` to establish the database. Then run `bundle install` to install all the gem dependencies (for the Sinatra application all you will need to do is run `ruby app.rb` in addition to bundle). 
+Following this run `rails s` in each terminal for the Rails application. You should ensure that each console is running on a separate `localhost` number. For example, `localhost:5000` for the front end repository and `localhost:4567` for the sinatra backend, and `localhost:3000` for the Journal BE repository. These values are already set by default in each repository but you can change it by going to the `puma.rb` files in the `config` directory for the Rails applications. By default sinatra will assign the port number `4567`.
+Then in your browser type in `localhost:fe_repo_port_number` and you will be good to use the application. By default the backend application should be `localhost:5000`.
 
-Alternatively you can utilize the deployed version of the site here: (link will be placed soon)
+Alternatively you can utilize the deployed version of the site here: [Heroku Site](https://guardian-angel-5f5f5ba49dc1.herokuapp.com/login).
 
 ## Running the tests
 To run the tests for this repository, simply run `bundle exec rspec spec` from the command line while in the Guardian Angel projects directory. This will run all test files for the application. 
 ## Deployment
-Add additional notes to deploy this on a live system
+Instead of locally running all of the repositories, you can visit the deployed [Heroku Site](https://guardian-angel-5f5f5ba49dc1.herokuapp.com/login). The Sinatra Throughline API and the Rails Journal API are deployed and hosted for use with this hosted Front End repository so not additional set up will be required. 
 ## Built With
   - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
     for the Code of Conduct
