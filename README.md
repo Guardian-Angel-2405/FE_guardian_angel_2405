@@ -1,5 +1,5 @@
 # Guardian Angel Frontend Repository
-[guardian_angel_logo](https://github.com/user-attachments/assets/b8077389-719e-4102-abd0-949598799395)
+(Guardian Angel Logo)[guardian_angel_logo](https://github.com/user-attachments/assets/b8077389-719e-4102-abd0-949598799395)
 ‘Guardian Angel’ is a full stack Rails application that will allow users to create an account and gain access to resources that can boost mental health and/or help in times of crisis. Users will be able to select from a list of emotions and feelings as many times per day as they wish. By accessing the ‘ThroughLine API’, a list of helpful resources will be returned to the user, including, but not limited to, phone numbers, sms hotlines, support groups, and relevant, helpful websites. 
 ## Getting Started
 These instructions will give you a copy of the project up and running on
@@ -33,7 +33,8 @@ https://github.com/Guardian-Angel-2405/BE_JOURNAL_guardian_angel_2405)
 ## Contributing
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for submitting pull requests to us.
-## Versioning
+## Versioning![guardian_angel_logo](https://github.com/user-attachments/assets/0651222d-d034-4c4c-9b39-b414395af29b)
+
 We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
 available, see the [tags on this
 repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
